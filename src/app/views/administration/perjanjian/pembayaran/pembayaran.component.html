@@ -1,0 +1,211 @@
+<div class="animated fadeIn">
+    <div class="card" id="new47">
+      <div class="card-header">
+        <strong>Form Perjanjian</strong>
+      </div>
+      <div class="card-body">
+          <div id="form-container" style="margin-left: 100px; margin-right: 200px;">
+                <dx-form id="formInput" itemType="group" >
+                <dxi-item itemType="group" caption="" [colCount]="3">
+                <dxi-item dataField="Nomor BA" [colSpan]="2"></dxi-item>
+              
+                    <dxi-item [colSpan]="1">
+                        <dx-button
+                        class="button-info"
+                        text="Detail"
+                        (onClick)="showInfo()">
+                    </dx-button>
+                    
+                    <dx-popup
+                        class="popup"
+                        [width]="600"
+                        [height]="200"
+                        [showTitle]="true"
+                        title=" Detail"
+                        [dragEnabled]="false"
+                        [closeOnOutsideClick]="true"
+                        [(visible)]="popupVisible">
+                        <div *dxTemplate="let data of 'content'">
+                            <dx-form id="notes" itemType="group" sssClass="first-group" [formData]="search" [colCount]="3">
+                            <dxi-item dataField="" [editorOptions]="{ disabled: true, value:tampil }"  [colSpan]="3" ></dxi-item>
+                            
+                            </dx-form>
+                        </div>
+                        </dx-popup>
+                      </dxi-item>  
+
+                      <dxi-item [colSpan]="3">
+                          <div id="fileuploader-container">
+                            <dx-file-uploader
+                                selectButtonText="Select Document"
+                                labelText=""
+                                accept="document/*"
+                                (onValueChanged)="upload($event)"
+                                uploadMode="useForm"
+                                >
+                            </dx-file-uploader>
+                            
+                        </div>
+                        </dxi-item>
+
+                        <dxi-item dataField="DJPT" caption="DJPT" [editorOptions]="{ disabled: false }" [colSpan]="2">
+                            <dx-select-box [dataSource]="Status">
+                                <div *dxTemplate="let data of 'dropDownButton'">    
+                                </div>
+                          </dx-select-box>
+                      </dxi-item> 
+              
+                        <dxi-item [colSpan]="1">
+                            <dx-button
+                            class="button-info"
+                            text="Detail"
+                            (onClick)="showInfo()">
+                        </dx-button>
+                        
+                        <dx-popup
+                            class="popup"
+                            [width]="600"
+                            [height]="200"
+                            [showTitle]="true"
+                            title=" Detail"
+                            [dragEnabled]="false"
+                            [closeOnOutsideClick]="true"
+                            [(visible)]="popupVisible">
+                            <div *dxTemplate="let data of 'content'">
+                                <dx-form id="notes" itemType="group" sssClass="first-group" [formData]="search" [colCount]="3">
+                                <dxi-item dataField="" [editorOptions]="{ disabled: true, value:tampil1 }"  [colSpan]="3" ></dxi-item>
+                                
+                                </dx-form>
+                            </div>
+                            </dx-popup>
+                          </dxi-item>  
+    
+                          <dxi-item [colSpan]="3">
+                              <div id="fileuploader-container">
+                                <dx-file-uploader
+                                    selectButtonText="Select Document"
+                                    labelText=""
+                                    accept="document/*"
+                                    (onValueChanged)="upload1($event)"
+                                    uploadMode="useForm"
+                                    >
+                                </dx-file-uploader>
+                                
+                            </div>
+                            </dxi-item>
+
+                            <dxi-item dataField="Target BA (sesuai kontrak)" [editorOptions]="{ disabled: false }" [colSpan]="3">
+                                <dx-date-box
+                                placeholder="Thursday, 14 Feb 2019 at 11:08"
+                                type="datetime"
+                                [showClearButton]="true"
+                                [useMaskBehavior]="true"
+                                displayFormat="EEEE, d MMM yyyy 'at' HH:mm"
+                                [value]="date"
+                                (onValueChanged)="dateBox_valueChanged($event)">>
+                            </dx-date-box>
+                            </dxi-item>
+
+                            <dxi-item dataField="Target BA" [editorOptions]="{ disabled: false }" [colSpan]="3">
+                                <dx-date-box
+                                placeholder="Thursday, 14 Feb 2019 at 11:08"
+                                type="datetime"
+                                [showClearButton]="true"
+                                [useMaskBehavior]="true"
+                                displayFormat="EEEE, d MMM yyyy 'at' HH:mm"
+                                [value]="date"
+                                (onValueChanged)="dateBox_valueChanged($event)">>
+                            </dx-date-box>
+                            </dxi-item>
+
+                            <dxi-item dataField="Tanggal Realisasi BA" [editorOptions]="{ disabled: false }" [colSpan]="3">
+                                <dx-date-box
+                                placeholder="Thursday, 14 Feb 2019 at 11:08"
+                                type="datetime"
+                                [showClearButton]="true"
+                                [useMaskBehavior]="true"
+                                displayFormat="EEEE, d MMM yyyy 'at' HH:mm"
+                                [value]="date"
+                                (onValueChanged)="dateBox_valueChanged($event)">>
+                            </dx-date-box>
+                            </dxi-item>
+
+                            <dxi-item dataField="Tanggal GR" [editorOptions]="{ disabled: false }" [colSpan]="2">
+                                <dx-date-box
+                                placeholder="Thursday, 14 Feb 2019 at 11:08"
+                                type="datetime"
+                                [showClearButton]="true"
+                                [useMaskBehavior]="true"
+                                displayFormat="EEEE, d MMM yyyy 'at' HH:mm"
+                                [value]="date"
+                                (onValueChanged)="dateBox_valueChanged($event)">>
+                            </dx-date-box>
+                            </dxi-item>
+
+                            <dxi-item [colSpan]="1">
+                                <dx-button
+                                class="button-info"
+                                text="Detail"
+                                (onClick)="showInfo()">
+                            </dx-button>
+                            
+                            <dx-popup
+                                class="popup"
+                                [width]="600"
+                                [height]="200"
+                                [showTitle]="true"
+                                title=" Detail"
+                                [dragEnabled]="false"
+                                [closeOnOutsideClick]="true"
+                                [(visible)]="popupVisible">
+                                <div *dxTemplate="let data of 'content'">
+                                    <dx-form id="notes" itemType="group" sssClass="first-group" [formData]="search" [colCount]="3">
+                                    <dxi-item dataField="" [editorOptions]="{ disabled: true, value:tampil1 }"  [colSpan]="3" ></dxi-item>
+                                    
+                                    </dx-form>
+                                </div>
+                                </dx-popup>
+                              </dxi-item>  
+        
+                              <dxi-item [colSpan]="3">
+                                  <div id="fileuploader-container">
+                                    <dx-file-uploader
+                                        selectButtonText="Select Document"
+                                        labelText=""
+                                        accept="document/*"
+                                        (onValueChanged)="upload1($event)"
+                                        uploadMode="useForm"
+                                        >
+                                    </dx-file-uploader>
+                                    
+                                </div>
+                                </dxi-item>
+
+                                <dxi-item dataField="Nominal GR" [colSpan]="3"></dxi-item>
+                                <dxi-item dataField="Nominal Invoice" [colSpan]="3"></dxi-item>   
+
+                </dxi-item> 
+              </dx-form>
+              <br>
+                  <dx-button text="Request New GR" icon="add" (click)="tambah()" ></dx-button> 
+                  <br>
+                  <br>
+                  <dx-button text="Tambah BA Baru" icon="add" type="success" (click)="tambah()" ></dx-button> 
+                  <br>
+                  <br>
+                  <dx-form>
+                    <dxi-item dataField="Nominal Total  GR" [colSpan]="3"></dxi-item>
+                    <dxi-item dataField="Nominal Total  Invoice" [colSpan]="3"></dxi-item>
+                    <dxi-item dataField="Nominal Selisih PO - GR" [colSpan]="3"></dxi-item>
+                    <dxi-item dataField="Nominal Selisih GR - Invoice" [colSpan]="3"></dxi-item>
+                  </dx-form>
+                  <br>
+                  <br>
+                  <dx-button text="Submit" (click)="submit()" type="success"></dx-button>
+  
+            
+          </div>
+        </div>
+    </div>
+  </div>
+  

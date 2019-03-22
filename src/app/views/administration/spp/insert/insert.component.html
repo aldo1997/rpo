@@ -1,0 +1,213 @@
+<div class="animated fadeIn">
+  <div class="card" id="new47">
+    <div class="card-header">
+      <strong>Insert SPP</strong>
+    </div>
+    <div class="card-body">
+        <div id="form-container" style="margin-left: 100px; margin-right: 200px;">
+          <div *ngIf="!isAdv">
+            <dx-form id="formInput" itemType="group" sssClass="first-group" [formData]="search" [colCount]="2">
+                <dxi-item itemType="group" caption="Input SPP" [colCount]="3">
+                <dxi-item dataField="Catatan SPP"  [editorOptions]="{ disabled: false }" [colSpan]="3" ></dxi-item>
+                <dxi-item dataField="Nama Pengadaan"  [editorOptions]="{ disabled: false }" [colSpan]="3" ></dxi-item>
+                <dxi-item dataField="Deskripsi"  [editorOptions]="{ disabled: false }" [colSpan]="3" ></dxi-item>
+                <dxi-item dataField="Judul Pekerjaan"  [editorOptions]="{ disabled: false }" [colSpan]="3" ></dxi-item>
+                <dxi-item dataField="Prioritas" [editorOptions]="{ disabled: false }" [colSpan]="3">
+                    <dx-select-box [dataSource]="Prioritas">
+                        <div *dxTemplate="let data of 'dropDownButton'"></div>
+                  </dx-select-box>
+                </dxi-item>      
+                <dxi-item dataField="Tanggal SPP" [editorOptions]="{ disabled: false }" [colSpan]="3">
+                    <dx-date-box
+                    placeholder="Thursday, 14 Feb 2019 at 11:08"
+                    type="datetime"
+                    [showClearButton]="true"
+                    [useMaskBehavior]="true"
+                    displayFormat="EEEE, d MMM yyyy 'at' HH:mm"
+                    [value]="date"
+                    (onValueChanged)="dateBox_valueChanged($event)">>
+                </dx-date-box>
+                </dxi-item>
+                <dxi-item dataField="TW SPP Plan" [editorOptions]="{ disabled: false }" [colSpan]="3">
+                    <dx-select-box [dataSource]="TWSPPPlan">
+                        <div *dxTemplate="let data of 'dropDownButton'"></div>
+                  </dx-select-box>
+                </dxi-item>  
+                <dxi-item dataField="TW SPP Real" [editorOptions]="{ disabled: false }" [colSpan]="3">
+                    <dx-select-box [dataSource]="TWSPPReal">
+                        <div *dxTemplate="let data of 'dropDownButton'"></div>
+                  </dx-select-box>
+                </dxi-item>  
+                <dxi-item dataField="Tanggal PO" [editorOptions]="{ disabled: false }" [colSpan]="3">
+                    <dx-date-box
+                    placeholder="Thursday, 14 Feb 2019 at 11:08"
+                    type="datetime"
+                    [showClearButton]="true"
+                    [useMaskBehavior]="true"
+                    displayFormat="EEEE, d MMM yyyy 'at' HH:mm"
+                    [value]="date"
+                    (onValueChanged)="dateBox_valueChanged($event)">>
+                </dx-date-box>
+                </dxi-item>
+                <dxi-item dataField="No SPP" [editorOptions]="{ disabled: false }" [colSpan]="3">
+                    <dx-select-box [dataSource]="NomorSPP">
+                        <div *dxTemplate="let data of 'dropDownButton'"></div>
+                  </dx-select-box>
+                </dxi-item>
+                <dxi-item dataField="Status SPP" [editorOptions]="{ disabled: false }" [colSpan]="3">
+                    <dx-select-box [dataSource]="StatusSPP">
+                        <div *dxTemplate="let data of 'dropDownButton'"></div>
+                  </dx-select-box>
+                </dxi-item>  
+                <dxi-item dataField="Nilai SPP"  [editorOptions]="{ disabled: false }" [colSpan]="3" ></dxi-item>
+                <dxi-item dataField="PIC SPP"  [editorOptions]="{ disabled: false }" [colSpan]="3" ></dxi-item>
+                </dxi-item>
+                
+                <dxi-item itemType="group" caption="Administrasi" [colCount]="3">
+                    <dxi-item dataField="Anggaran" [editorOptions]="{ disabled: false }" [colSpan]="3">
+                        <dx-select-box [dataSource]="Anggaran">
+                            <div *dxTemplate="let data of 'dropDownButton'"></div>
+                      </dx-select-box>
+                    </dxi-item>  
+                    <dxi-item dataField="Tahun Anggaran" [editorOptions]="{ disabled: false }" [colSpan]="3">
+                        <dx-select-box [dataSource]="TahunAnggaran">
+                            <div *dxTemplate="let data of 'dropDownButton'"></div>
+                      </dx-select-box>
+                    </dxi-item>  
+                    <dxi-item dataField="Tahun Terbit PO" [editorOptions]="{ disabled: false }" [colSpan]="3">
+                        <dx-select-box [dataSource]="TahunTerbitPO">
+                            <div *dxTemplate="let data of 'dropDownButton'"></div>
+                      </dx-select-box>
+                    </dxi-item> 
+                    <dxi-item dataField="Kode IO"  [editorOptions]="{ disabled: false }" [colSpan]="3" ></dxi-item>
+                    <dxi-item dataField="GM Penanggung Jawab" [editorOptions]="{ disabled: false }" [colSpan]="3">
+                        <dx-select-box [dataSource]="GMPenanggungJawab">
+                            <div *dxTemplate="let data of 'dropDownButton'"></div>
+                      </dx-select-box>
+                    </dxi-item> 
+                    <dxi-item dataField="Milestone SPP"  [editorOptions]="{ disabled: false }" [colSpan]="3" ></dxi-item>
+                    <dxi-item dataField="Estimasi Budget"  [editorOptions]="{ disabled: false }" [colSpan]="3" ></dxi-item>
+                    <dxi-item dataField="Jenis Program Kerja" [editorOptions]="{ disabled: false }" [colSpan]="3">
+                        <dx-select-box [dataSource]="JenisProgramKerja">
+                            <div *dxTemplate="let data of 'dropDownButton'"></div>
+                      </dx-select-box>
+                    </dxi-item>
+                    <dxi-item dataField="TW PO Plan" [editorOptions]="{ disabled: false }" [colSpan]="3">
+                        <dx-select-box [dataSource]="TWPOPlan">
+                            <div *dxTemplate="let data of 'dropDownButton'"></div>
+                      </dx-select-box>
+                    </dxi-item>
+                    <dxi-item dataField="TW PO Real" [editorOptions]="{ disabled: false }" [colSpan]="3">
+                        <dx-select-box [dataSource]="TWPOReal">
+                            <div *dxTemplate="let data of 'dropDownButton'"></div>
+                      </dx-select-box>
+                    </dxi-item>
+                    <dxi-item dataField="Divisi" [editorOptions]="{ disabled: false }" [colSpan]="3">
+                        <dx-select-box [dataSource]="Divisi">
+                            <div *dxTemplate="let data of 'dropDownButton'"></div>
+                      </dx-select-box>
+                    </dxi-item>
+                    <dxi-item dataField="PIC LOG"  [editorOptions]="{ disabled: false }" [colSpan]="3" ></dxi-item>
+                    <dxi-item dataField="Connect Pending"  [editorOptions]="{ disabled: false }" [colSpan]="3" ></dxi-item>
+                    <dxi-item dataField="Pemilik Program" [editorOptions]="{ disabled: false }" [colSpan]="3">
+                        <dx-select-box [dataSource]="PemilikProgram">
+                            <div *dxTemplate="let data of 'dropDownButton'"></div>
+                      </dx-select-box>
+                    </dxi-item>
+                    <dxi-item dataField="Kriteria" [editorOptions]="{ disabled: false }" [colSpan]="3">
+                        <dx-select-box [dataSource]="Kriteria">
+                            <div *dxTemplate="let data of 'dropDownButton'"></div>
+                      </dx-select-box>
+                    </dxi-item>
+                    <dxi-item dataField="PR"  [editorOptions]="{ disabled: false }" [colSpan]="3" ></dxi-item>
+                    <dxi-item dataField="Nomor PO"  [editorOptions]="{ disabled: false }" [colSpan]="3" ></dxi-item>
+                    <dxi-item dataField="Tanggal Terima PO" [editorOptions]="{ disabled: false }" [colSpan]="3">
+                        <dx-date-box
+                        placeholder="Thursday, 14 Feb 2019 at 11:08"
+                        type="datetime"
+                        [showClearButton]="true"
+                        [useMaskBehavior]="true"
+                        displayFormat="EEEE, d MMM yyyy 'at' HH:mm"
+                        [value]="date"
+                        (onValueChanged)="dateBox_valueChanged($event)">>
+                    </dx-date-box>
+                    </dxi-item>
+                    <dxi-item dataField="Kendala" [editorOptions]="{ disabled: false }" [colSpan]="3">
+                        <dx-select-box [dataSource]="Kendala">
+                            <div *dxTemplate="let data of 'dropDownButton'"></div>
+                      </dx-select-box>
+                    </dxi-item>
+                    <dxi-item dataField="Judul Program Kerja"  [editorOptions]="{ disabled: false }" [colSpan]="3" ></dxi-item>
+                    <dxi-item dataField="Jenis Pengadaan" [editorOptions]="{ disabled: false }" [colSpan]="3">
+                        <dx-select-box [dataSource]="JenisPengadaan">
+                            <div *dxTemplate="let data of 'dropDownButton'"></div>
+                      </dx-select-box>
+                    </dxi-item>
+                </dxi-item>
+
+                <dxi-item itemType="group" caption="Flag Logistik dan Flag Anggaran" [colCount]="3">
+                    <dxi-item dataField="Tanggal SPP" [editorOptions]="{ disabled: false }" [colSpan]="3">
+                        <dx-date-box
+                        placeholder="Thursday, 14 Feb 2019 at 11:08"
+                        type="datetime"
+                        [showClearButton]="true"
+                        [useMaskBehavior]="true"
+                        displayFormat="EEEE, d MMM yyyy 'at' HH:mm"
+                        [value]="date"
+                        (onValueChanged)="dateBox_valueChanged($event)">>
+                    </dx-date-box>
+                    </dxi-item>
+                    <dxi-item dataField="Tanggal SPP di Anggaran" [editorOptions]="{ disabled: false }" [colSpan]="3">
+                        <dx-date-box
+                        placeholder="Thursday, 14 Feb 2019 at 11:08"
+                        type="datetime"
+                        [showClearButton]="true"
+                        [useMaskBehavior]="true"
+                        displayFormat="EEEE, d MMM yyyy 'at' HH:mm"
+                        [value]="date"
+                        (onValueChanged)="dateBox_valueChanged($event)">>
+                    </dx-date-box>
+                    </dxi-item>
+                    <dxi-item dataField="Tanggal SPP di Logistik" [editorOptions]="{ disabled: false }" [colSpan]="3">
+                        <dx-date-box
+                        placeholder="Thursday, 14 Feb 2019 at 11:08"
+                        type="datetime"
+                        [showClearButton]="true"
+                        [useMaskBehavior]="true"
+                        displayFormat="EEEE, d MMM yyyy 'at' HH:mm"
+                        [value]="date"
+                        (onValueChanged)="dateBox_valueChanged($event)">>
+                    </dx-date-box>
+                    </dxi-item>
+                </dxi-item>
+
+                <dxi-item itemType="group" caption="Flag Persentase dan Kelengkapan SPP" [colCount]="3">
+                    <dxi-item dataField="TOR" [editorOptions]="{ disabled: false }" [colSpan]="3">
+                        <dx-select-box [dataSource]="TOR">
+                            <div *dxTemplate="let data of 'dropDownButton'"></div>
+                      </dx-select-box>
+                    </dxi-item>
+                    <dxi-item dataField="RAB" [editorOptions]="{ disabled: false }" [colSpan]="3">
+                        <dx-select-box [dataSource]="RAB">
+                            <div *dxTemplate="let data of 'dropDownButton'"></div>
+                      </dx-select-box>
+                    </dxi-item>
+                    <dxi-item dataField="KKO" [editorOptions]="{ disabled: false }" [colSpan]="3">
+                        <dx-select-box [dataSource]="KKO">
+                            <div *dxTemplate="let data of 'dropDownButton'"></div>
+                      </dx-select-box>
+                    </dxi-item>
+                    <dxi-item dataField="KKF" [editorOptions]="{ disabled: false }" [colSpan]="3">
+                        <dx-select-box [dataSource]="KKF">
+                            <div *dxTemplate="let data of 'dropDownButton'"></div>
+                      </dx-select-box>
+                    </dxi-item>
+                </dxi-item>
+            </dx-form>
+                <dx-button text="Save" (onclick)="save()" type="success"></dx-button>
+                <dx-button text="Cancel" (onclick)="cancel()" type="danger"></dx-button>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>

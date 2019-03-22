@@ -1,0 +1,135 @@
+<div class="animated fadeIn">
+  <div class="card" id="new47">
+    <div class="card-header">
+      <strong>Form SPP</strong>
+    </div>
+    <div class="card-body">
+      <div>
+        <nav>
+          <a routerLink="../insert" routerLinkActive="active">+ Insert</a>
+        </nav>
+      </div>
+      <!-- tabel -->
+      <div id="data-grid-demo" style="margin-top: 20px;">
+        <dx-data-grid id="gridContainer" [dataSource]="gridDataSource" [showRowLines]="true" [showBorders]="true"
+          [columnHidingEnabled]="true" [rowAlternationEnabled]="true" [columnAutoWidth]="true"
+          [wordWrapEnabled]="false">
+          <dxo-header-filter [visible]="true"></dxo-header-filter>
+          <dxo-filter-row [visible]="true"></dxo-filter-row>
+
+          <dxo-export [enabled]="true" fileName="SPP" [allowExportSelectedData]="false"></dxo-export>
+
+          <dxi-column [fixed]="true" caption="Action" cellTemplate="cellTemplate"></dxi-column>
+
+          <dxi-column dataField="id" caption="No" sortOrder="asc" [allowEditing]="false"></dxi-column>
+          <dxi-column dataField="status_spp" caption="Status SPP" sortOrder="asc" [allowEditing]="false">
+          </dxi-column>
+          <dxi-column dataField="no_spp" caption="Nomor SPP" sortOrder="asc" [allowEditing]="false"></dxi-column>
+          <dxi-column dataField="divisi" caption="Divisi" sortOrder="asc" [allowEditing]="false"></dxi-column>
+          <dxi-column dataField="jpk" caption="Jenis Program Kerja" sortOrder="asc" [allowEditing]="false">
+          </dxi-column>
+          <dxi-column dataField="gmpj" caption="GM Penanggung Jawab" sortOrder="asc" [allowEditing]="false">
+          </dxi-column>
+          <dxi-column dataField="nama_peng" caption="Nama Pengadaan" sortOrder="asc" [allowEditing]="false">
+          </dxi-column>
+          <dxi-column dataField="deskripsi" caption="Deskripsi" sortOrder="asc" [allowEditing]="false"></dxi-column>
+          <dxi-column dataField="jp" caption="Judul Pekerjaan (Judul SPP)" sortOrder="asc" [allowEditing]="false">
+          </dxi-column>
+          <dxi-column dataField="prioritas" caption="Prioritas" sortOrder="asc" [allowEditing]="false"></dxi-column>
+          <dxi-column dataField="es_bud" caption="Estimasi Budget" sortOrder="asc" [allowEditing]="false">
+          </dxi-column>
+          <dxi-column dataField="target_spp" caption="Target SPP" sortOrder="asc" [allowEditing]="false">
+          </dxi-column>
+          <dxi-column dataField="tw_spp" caption="TW SPP Plan" sortOrder="asc" [allowEditing]="false"></dxi-column>
+          <dxi-column dataField="tw_po_plan" caption="TW PO Plan" sortOrder="asc" [allowEditing]="false">
+          </dxi-column>
+          <dxi-column dataField="kode_io" caption="Kode IO" sortOrder="asc" [allowEditing]="false"></dxi-column>
+          <dxi-column dataField="anggaran" caption="Anggaran" sortOrder="asc" [allowEditing]="false"></dxi-column>
+          <dxi-column dataField="tahun_anggaran" caption="Tahun Anggaran" sortOrder="asc" [allowEditing]="false">
+          </dxi-column>
+          <!-- TAHUN TERBIT -->
+          <dxi-column dataField="pemilik_program" caption="Pemilik Program" sortOrder="asc" [allowEditing]="false">
+          </dxi-column>
+          <dxi-column dataField="note_spp" caption="Catatan SPP" sortOrder="asc" [allowEditing]="false">
+          </dxi-column>
+          <dxi-column dataField="nilai_spp" caption="Nilai SPP" sortOrder="asc" [allowEditing]="false"></dxi-column>
+          <dxi-column dataField="tor" caption="TOR" sortOrder="asc" [allowEditing]="false"></dxi-column>
+          <dxi-column dataField="rab" caption="RAB" sortOrder="asc" [allowEditing]="false"></dxi-column>
+          <dxi-column dataField="kko" caption="KKO" sortOrder="asc" [allowEditing]="false"></dxi-column>
+          <dxi-column dataField="kkf" caption="KKF" sortOrder="asc" [allowEditing]="false"></dxi-column>
+          <dxi-column dataField="tanggal_spp" caption="Tanggal SPP" sortOrder="asc" [allowEditing]="false">
+          </dxi-column>
+          <dxi-column dataField="tw_spp_real" caption="TW SPP Real" sortOrder="asc" [allowEditing]="false">
+          </dxi-column>
+          <dxi-column dataField="tgl_spp_ang" caption="Tanggal SPP di Anggaran" sortOrder="asc" [allowEditing]="false">
+          </dxi-column>
+          <dxi-column dataField="tgl_spp_log" caption="Tanggal SPP di Logistik" sortOrder="asc" [allowEditing]="false">
+          </dxi-column>
+          <dxi-column dataField="target_po" caption="Target PO" sortOrder="asc" [allowEditing]="false"></dxi-column>
+          <dxi-column dataField="pr" caption="PR" sortOrder="asc" [allowEditing]="false"></dxi-column>
+          <dxi-column dataField="no_po" caption="Nomor PO" sortOrder="asc" [allowEditing]="false"></dxi-column>
+          <dxi-column dataField="tgl_sp2k" caption="Tanggal PO" sortOrder="asc" [allowEditing]="false"></dxi-column>
+          <dxi-column dataField="tang_ter_po" caption="Tanggal Terima PO" sortOrder="asc" [allowEditing]="false">
+          </dxi-column>
+          <dxi-column dataField="tw_po_real" caption="TW PO Real" sortOrder="asc" [allowEditing]="false">
+          </dxi-column>
+          <dxi-column dataField="kendala" caption="Kendala" sortOrder="asc" [allowEditing]="false"></dxi-column>
+          <!-- COMMENT PENDING -->
+          <!-- TANGGAL COMMENT -->
+          <dxi-column dataField="milestone_spp" caption="Milestone SPP" sortOrder="asc" [allowEditing]="false">
+          </dxi-column>
+          <dxi-column dataField="kriteria" caption="Kriteria" sortOrder="asc" [allowEditing]="false"></dxi-column>
+          <dxi-column dataField="jen_peng" caption="Jenis Pengadaan" sortOrder="asc" [allowEditing]="false">
+          </dxi-column>
+          <dxi-column dataField="flag" caption="Flag Peluncuran SPP" sortOrder="asc" [allowEditing]="false">
+          </dxi-column>
+          <!-- PRESENTASE KELENGKAPAN SPP -->
+          <!-- AGING DOKUMEN DI USER -->
+          <!-- AGING DOKUMEN DI ANGGARAN  -->
+          <!-- AGING DOKUMEN DI LOGISTIK -->
+          <!-- AGING DOKUMEN DITERIMA -->
+          <!-- AGING SPP TERBIT S/D PO TERBIT -->
+          <!-- AGING SPP TERBIT S/D PO DITERIMA -->
+
+          <div *dxTemplate="let data of 'cellTemplate'">
+            <div (click)="showMenu(data.value)" class="text-center">
+              <i class="fa fa-th-large" id="btn{{data.value}}"></i>
+            </div>
+          </div>
+        </dx-data-grid>
+        <app-context [menuVisible]="menuVisible" [target]="target" [contextItems]="contextItems"
+          (onHideMenu)="onHideMenu()" (itemClick)="itemClick($event)"></app-context>
+        <!-- <app-progress [progressVisible]="progressVisible" [progressContent]="progressContent"
+                    [progressTitle]="progressTitle" (onHideProgresss)="onHideProgress()"></app-progress> -->
+      </div>
+      <!-- end table -->
+
+      <!-- pagination -->
+      <div class="row">
+        <div class="col-sm-9">
+          <ul class="pagination">
+            <li class="page-item" (click)="prev()" id="prev"><a class="page-link">Prev</a></li>
+            <div *ngFor="let item of fakeArray; index as i; trackBy: trackByFn">
+              <div *ngIf="i+1>=minLimitShow && i+1<=maxLimitShow">
+                <li [ngClass]="page==i+1 ? 'page-item active' : 'page-item'"><a class="page-link" id="{{ i }}"
+                    (click)="doneClick($event)">{{ i+1 }}</a></li>
+              </div>
+            </div>
+            <li class="page-item" (click)="next()" id="next"><a class="page-link">Next</a></li>
+          </ul>
+          <p>Halaman {{ page }} dari {{ jumlahHal }}</p>
+        </div>
+        <div class="col-sm-3"><br>
+          <div class="btn-group" role="group" aria-label="Basic example">
+            <button type="button" id="5" (click)="limit($event)"
+              [ngClass]="activeClass==5 ? 'btn btn-secondary' : 'btn' ">5</button>
+            <button type="button" id="10" (click)="limit($event)"
+              [ngClass]="activeClass==10 ? 'btn btn-secondary' : 'btn' ">10</button>
+            <button type="button" id="15" (click)="limit($event)"
+              [ngClass]="activeClass==15 ? 'btn btn-secondary' : 'btn' ">15</button>
+          </div>
+        </div>
+      </div>
+      <!-- end pagination -->
+    </div>
+  </div>

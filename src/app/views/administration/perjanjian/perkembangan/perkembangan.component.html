@@ -1,0 +1,105 @@
+<div class="animated fadeIn">
+    <div class="card" id="new47">
+      <div class="card-header">
+        <strong>Form Progress</strong>
+      </div>
+      <div class="card-body">
+          <div id="form-container" style="margin-left: 100px; margin-right: 200px;">
+            <div *ngIf="!isAdv">
+              <dx-form id="formInput" itemType="group" sssClass="first-group" [formData]="search" [colCount]="3">
+                <dxi-item dataField="StatusProgress" caption="Status Progress" [editorOptions]="{ disabled: false }" [colSpan]="3">
+                    <dx-select-box [dataSource]="simpleProducts">
+                        <div *dxTemplate="let data of 'dropDownButton'">
+                            
+                        </div>
+                  </dx-select-box>
+              </dxi-item>              
+                <dxi-item dataField="PlanProject"  caption="Presentasi Plan Project" [editorOptions]="{ disabled: false }" [colSpan]="3" placeholder="Enter Presentasi Plan Project here..."></dxi-item>
+                  <dxi-item dataField="ProjectFisik" caption="Presentasi Project Fisik" [editorOptions]="{ disabled: false }" [colSpan]="3" placeholder="Enter Presentasi Project Fisik here..."></dxi-item>
+                
+                <dxi-item dataField="Keterangan" caption="Keterangan" [editorOptions]="{ disabled: false }" [colSpan]="2">
+                    <dx-date-box
+                    placeholder="Thursday, 14 Feb 2019 at 11:08"
+                    type="datetime"
+                    [showClearButton]="true"
+                    [useMaskBehavior]="true"
+                    displayFormat="EEEE, d MMM yyyy 'at' HH:mm"
+                    [value]="date"
+                    (onValueChanged)="dateBox_valueChanged($event)">>
+                </dx-date-box>
+                </dxi-item>
+                <dxi-item [colSpan]="3">
+                    <dx-button
+                    class="button-info"
+                    text="Tambah"
+                    (onClick)="showInfo()">
+                </dx-button>
+                
+                <dx-popup
+                class="popup"
+                [width]="800"
+                [height]="500"
+                [showTitle]="true"
+                title="Isi Deskripsi"
+                [dragEnabled]="false"
+                [closeOnOutsideClick]="true"
+                [(visible)]="popupVisible">
+                <div *dxTemplate="let data of 'content'">
+                    <dx-form id="notes" itemType="group" sssClass="first-group" [formData]="search" [colCount]="3">
+                    <dxi-item dataField="" editorType="dxTextArea"  [colSpan]="3" >
+                        <textarea 
+                        type="text"
+                        style="width: 100%; height: 40%;"
+                        [value]="text"
+                        (input)="updateValue($event)"></textarea>
+                      </dxi-item>
+                    </dx-form>
+                </div>
+                </dx-popup>
+                  </dxi-item>  
+                                
+                <dxi-item dataField="" caption="Isi Progress" [editorOptions]="{ disabled: true, value:tampil }" [colSpan]="3"></dxi-item>
+                <dxi-item [colSpan]="1">
+                  <div class="dx-field">
+                    <div class="dx-field-label"><h3>ITEM</h3></div>
+                </div>
+                </dxi-item>
+                <dxi-item [colSpan]="1">
+                  <div class="dx-field">
+                    <div class="dx-field-label"><h3>PLAN</h3></div>
+                </div>
+                </dxi-item>
+                <dxi-item [colSpan]="1">
+                  <div class="dx-field">
+                    <div class="dx-field-label"><h3>AKTUAL</h3></div>
+                </div>
+                </dxi-item>
+                
+                
+               
+              </dx-form>
+              <dx-form id="formLoop" itemType="group" [colCount]="3">
+              <div *ngFor="let item of items; let i = index">
+                  <dxi-item [colSpan]="1">
+                      <div class="dx-field">
+                        <div class="dx-field-label"><h3>Link Loop {{i+1}}</h3></div>
+                    </div>
+                  </dxi-item>
+               <dxi-item name="txtPlan{{i+1}}" dataField="" [editorOptions]="{ disabled: false }" [colSpan]="1"></dxi-item>
+               <dxi-item name="txtAktual{{i+1}}" dataField="" [editorOptions]="{ disabled: false }" [colSpan]="1"></dxi-item>
+               
+              </div>
+              </dx-form>
+              
+             
+                <dx-button icon="add" text="Tambah Item" (click)="tes()" ></dx-button> 
+                <br>
+                <br>
+                <dx-button text="Submit" (click)="submit()" type="success"></dx-button>
+              
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+  
